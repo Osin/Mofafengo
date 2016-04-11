@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Mofafengo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+    .on{background: hotpink}
+  </style>
 </head>
 <body ng-app="mofaApp">
   <main ng-controller="MainCtrl as main">
@@ -10,6 +14,25 @@
     <input type="text" ng-model="main.query" placeholder="Type a number or a valid word">
     <hr>
     <output>{{main.convert(main.query)}}</output>
+    <div class="controller">
+      <table>
+        <thead>
+          <th><!--empty string for filling console--></th>
+          <th scope="col" ng-repeat="vowel in main.vowels">
+            {{vowel}}
+          </th>
+        </thead>
+        <tbody>
+          <tr scope="row" ng-repeat="consonant in main.consonants">
+            <th>{{consonant}}</th>
+            <td ng-class="{on:main.hasValue(consonant+vowel)}" ng-repeat="vowel in main.vowels">
+              {{main.convert(consonant+vowel)}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
   </main>
   <script src="node_modules/angular/angular.js"></script>
   <script src="app.js"></script>
