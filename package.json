@@ -1,0 +1,12 @@
+{
+  "url": "https://github.com/Osin/Mofafengo",
+  "email": "osin@live.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Osin/Mofafengo.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.3"
+  }
+}
